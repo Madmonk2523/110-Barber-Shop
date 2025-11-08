@@ -185,13 +185,27 @@ if (tagline) {
         if (charIndex < originalText.length) {
             tagline.textContent += originalText.charAt(charIndex);
             charIndex++;
-            setTimeout(typeWriter, 100);
+            setTimeout(typeWriter, 80);
         }
     }
     
     // Start typing effect after a short delay
-    setTimeout(typeWriter, 500);
+    setTimeout(typeWriter, 800);
 }
+
+// Smooth fade-in for home content
+window.addEventListener('load', () => {
+    const homeText = document.querySelector('.home-text');
+    if (homeText) {
+        homeText.style.opacity = '0';
+        homeText.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+            homeText.style.transition = 'opacity 1s ease, transform 1s ease';
+            homeText.style.opacity = '1';
+            homeText.style.transform = 'translateY(0)';
+        }, 300);
+    }
+});
 
 // ===================================
 // Counter Animation for Experience Badge
