@@ -117,12 +117,15 @@ galleryItems.forEach((item, index) => {
 // ===================================
 
 const backToTopButton = document.getElementById('backToTop');
+const floatingBooksy = document.getElementById('floatingBooksy');
 
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 500) {
         backToTopButton.classList.add('visible');
+        floatingBooksy.classList.add('visible');
     } else {
         backToTopButton.classList.remove('visible');
+        floatingBooksy.classList.remove('visible');
     }
 });
 
